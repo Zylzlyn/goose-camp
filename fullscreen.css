@@ -1,0 +1,45 @@
+/* 首页是地图本身：铺满视口，四个入口悬置在南侧冰川上。 */
+.lighting-progress{display:inline-flex;align-items:center;gap:8px}
+.island-progress{display:block;width:70px;height:7px;appearance:none;border:1px solid #98b4b8;border-radius:0;background:#092c43;color:#e6c67e;overflow:hidden}
+.island-progress::-webkit-progress-bar{background:#092c43}
+.island-progress::-webkit-progress-value{background:#e6c67e}
+.island-progress::-moz-progress-bar{background:#e6c67e}
+body[data-page="home"]{overflow:hidden}
+body[data-page="home"] main{height:100vh;height:100dvh;min-height:0}
+body[data-page="home"] .home-board{position:relative;width:100%;height:100%;min-width:0;max-width:none;margin:0;padding:0;isolation:isolate}
+.home-board .map-panel{position:absolute;inset:0;margin:0;border:0;box-shadow:none;overflow:hidden}
+.home-board .map-scroll{position:absolute;inset:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:none}
+.home-board .map-scroll::-webkit-scrollbar{display:none}
+.home-board .map-canvas{position:relative;width:100%;width:max(100%,calc(100dvh * 1672 / 941));min-width:0;max-width:none;min-height:100%;height:auto;aspect-ratio:1672 / 941;overflow:visible;background:#0074ca}
+.home-board .world-map{display:block;width:100%;height:100%;margin:0;object-fit:cover;object-position:center bottom}
+.home-board .map-toolbar{position:absolute;z-index:3;top:max(14px,env(safe-area-inset-top));left:16px;right:auto;display:flex;gap:16px;min-height:0;padding:7px 11px;background:#0c3451df;border:1px solid #abc4c1;box-shadow:2px 2px 0 #042d4966;pointer-events:none}
+.home-board .map-toolbar h1{font-size:13px}
+.home-board .map-toolbar>span{font-size:10px}
+.home-board .map-bottom{position:absolute;z-index:2;top:max(55px,calc(env(safe-area-inset-top) + 41px));left:16px;right:auto;min-height:0;gap:12px;padding:3px 7px;background:#0b3552bf;color:#d7e7e6;font-size:10px;pointer-events:none}
+.home-board .map-swipe-note{display:block}
+.home-board .map-bottom span:last-child{display:block}
+.home-board .home-dock{position:absolute;z-index:4;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(900px,calc(100% - 32px));display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;padding:0}
+.home-board .dock-link{min-height:68px;padding:10px 14px;background:#123d55ed;border:2px solid #9fbfc5;box-shadow:3px 3px 0 #0c3c6080;color:#fff3ce}
+.home-board .dock-link:hover{background:#24576bea;border-color:#f7d58a}
+.home-board .dock-copy strong{font-size:14px}
+.home-board .dock-copy small{color:#bfd2d5}
+/* 背景单独加遮罩，页面文字、图片和卡片不随背景一起变暗。 */
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"]){background:#062c49;isolation:isolate}
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"])::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#031c34b8,#031c34cc),var(--camp-map,url('assets/map-0.png'));background-size:cover;background-position:center;background-repeat:no-repeat}
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"]) .page-heading{border-color:#a0c1ca70;text-shadow:0 2px 4px #031b30}
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"]) .gallery-hint,
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"]) .book-controls>span,
+body:is([data-page="geese"],[data-page="post"],[data-page="journal"]) .draw-note{color:#d8e5e8;text-shadow:0 1px 3px #041b2f}
+body[data-page="post"] .post-letter{background:#103e56ed}
+body[data-page="journal"] .journal-wrap{background:transparent}
+@media(max-width:650px){
+  .home-board .home-dock{width:calc(100% - 24px);grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;bottom:max(12px,env(safe-area-inset-bottom))}
+  .home-board .dock-link{min-height:57px;padding:7px 10px;gap:9px}
+  .home-board .dock-icon{width:26px;min-width:26px;height:26px}
+  .home-board .dock-copy strong{font-size:13px}
+  .home-board .dock-copy small{font-size:9px}
+  .home-board .dock-arrow{font-size:20px}
+  .home-board .map-toolbar{top:max(10px,env(safe-area-inset-top));left:12px;padding:6px 9px;gap:12px}
+  .home-board .map-bottom{left:12px;top:max(48px,calc(env(safe-area-inset-top) + 38px));gap:8px;font-size:9px}
+}
+@media(max-height:500px) and (min-width:651px){.home-board .home-dock{bottom:9px;gap:7px}.home-board .dock-link{min-height:49px;padding:5px 10px}.home-board .dock-icon{width:25px;min-width:25px;height:25px}.home-board .dock-copy small{display:none}}

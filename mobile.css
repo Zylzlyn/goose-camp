@@ -1,0 +1,111 @@
+/* 手机竖屏正常使用；地图横屏时展开，短屏允许上下滑动。 */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-wrap:break-word}
+.content-wrap,.journal-wrap,.bay-scene{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+.button,.back-link,.icon-button,.day-tabs button,.chapter-list button{min-height:44px}
+.button{max-width:100%;white-space:normal;text-align:center}
+.home-board .map-scroll{touch-action:pan-x pan-y;scrollbar-width:thin;scrollbar-color:#9bbfca #0a4975}
+.home-board .map-canvas{min-height:0;flex-shrink:0}
+.home-board .map-pin{min-height:40px;min-width:44px}
+.home-board .map-pin{transform:translate(-50%,calc(-100% - 12px))}
+.home-board .map-pin:hover{transform:translate(-50%,calc(-100% - 16px))}
+.home-board .map-bottom span.map-swipe-note{font-size:0}
+.home-board .map-swipe-note:before{content:'滑动探索地图';font-size:10px}
+.home-board .dock-link{min-height:52px}
+.page-heading{padding-top:env(safe-area-inset-top)}
+.image-view{-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+.geese-scroll{touch-action:pan-x pan-y;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.geese-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.card-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.card-inner{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
+@media(max-width:600px){
+  .home-board .map-toolbar{max-width:calc(100% - 24px);gap:9px}
+  .home-board .map-toolbar h1{font-size:12px;white-space:nowrap}
+  .island-progress{width:48px}
+  .home-board .home-dock{bottom:max(10px,env(safe-area-inset-bottom));gap:6px}
+  .home-board .dock-link{padding:7px 10px;min-height:56px}
+  .home-board .dock-arrow{display:none}
+  .home-board .dock-copy strong{font-size:13px}
+  .page-heading{gap:10px;align-items:center;flex-wrap:wrap}
+  .page-heading h1,.bay-scene .page-heading h1{font-size:20px}
+  .bay-scene{min-height:100svh;background-position:70% center;padding-bottom:max(22px,env(safe-area-inset-bottom))}
+  .bay-content{width:100%;max-width:410px;padding:14px 12px 18px}
+  .bay-content h2{font-size:20px;line-height:1.5}
+  .bay-intro{font-size:13px;line-height:1.8}
+  .day-tabs{margin-bottom:14px}
+  .day-tabs button{flex:1;max-width:160px;padding:8px 12px}
+  .bottle{margin:20px auto}
+  .bay-action .button{display:flex;width:100%;font-size:14px;padding:10px 12px;line-height:1.6}
+  .bay-action p{line-height:1.8;margin:12px auto 6px}
+  .bay-action small{display:block;line-height:1.7}
+  .post-layout{display:flex;flex-direction:column;gap:16px}
+  .post-letter,.draw-area{width:100%;min-width:0}
+  .post-letter{padding:15px}
+  .postcard{height:clamp(280px,90vw,360px)}
+  .card-face{padding:15px}
+  .card-message{font-size:15px}
+  .journal-stage{padding:5px 8px 23px}
+  .book{width:min(360px,100%);height:470px}
+  .book-page{padding:20px 21px 40px}
+  .book-page.book-cover{padding:0}
+  .journal-cover-title{left:15px;bottom:40px;max-width:calc(100% - 30px)}
+  .book-cover .book-foot{bottom:10px;right:10px;font-size:9px}
+  .book-controls{display:grid;grid-template-columns:1fr auto 1fr;gap:8px}
+  .book-controls .button{padding:8px;font-size:12px}
+  .book-controls>span{font-size:10px;white-space:nowrap}
+  .chapter-list{gap:6px}
+  .chapter-list button{font-size:11px;line-height:1.6;text-align:left}
+  dialog{width:calc(100vw - 16px);max-height:94dvh}
+  .dialog-head h2{font-size:15px;line-height:1.5;max-width:calc(100% - 50px)}
+  .icon-button{width:44px;min-width:44px}
+  .reader-tools{position:static}
+  .image-view{max-height:calc(94dvh - 116px)}
+  .postcard-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .postcard-actions .button{min-width:0;padding:8px;font-size:12px}
+  .enlarged-message{padding:14px;font-size:14px}
+  .enlarged-message>p:first-child{font-size:15px}
+  .enlarged-message p{overflow-wrap:anywhere}
+}
+@media(max-width:360px){
+  .home-board .map-toolbar{gap:6px;padding:6px 8px}
+  .home-board .map-toolbar h1{font-size:11px}
+  .home-board .map-toolbar>span{font-size:9px}
+  .island-progress{width:35px}
+  .home-board .dock-link{padding:7px 8px;gap:7px}
+  .home-board .dock-icon{width:23px;min-width:23px;height:23px}
+  .home-board .dock-copy strong{font-size:12px}
+  .book-controls{gap:5px}
+  .book-controls>span{font-size:9px}
+}
+/* 手机竖屏覆盖桌面的显式行列位置，按成员顺序自然排成两列。 */
+@media(orientation:portrait) and (max-width:800px){
+  .geese-wrap .geese-scroll{overflow:visible;touch-action:pan-y pinch-zoom}
+  .geese-wrap .geese-grid{min-width:0;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 8px}
+  .geese-wrap .goose-card{grid-row:auto!important;grid-column:auto!important;align-self:start;min-width:0;transform:none}
+  .geese-wrap .goose-person{min-height:36px;font-size:13px;letter-spacing:1px;padding:5px 7px}
+  .geese-wrap .gallery-hint:after{content:''}
+}
+@media(orientation:landscape) and (max-height:600px){
+  /* 使用原图比例，地图高于视口时纵向滑动，热点始终与原图坐标一致。 */
+  .home-board .map-canvas{width:max(100%,720px);min-width:0;min-height:0;height:auto;aspect-ratio:1672 / 941}
+  .home-board .home-dock{grid-template-columns:repeat(4,minmax(0,1fr));width:min(860px,calc(100% - 32px));gap:7px;bottom:max(7px,env(safe-area-inset-bottom))}
+  .home-board .dock-link{padding:6px 9px;min-height:49px;gap:8px}
+  .home-board .dock-copy strong{font-size:12px}
+  .home-board .dock-copy small,.home-board .dock-arrow{display:none}
+  .home-board .dock-icon{width:24px;min-width:24px;height:24px}
+  .home-board .map-toolbar{top:max(8px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));padding:5px 8px}
+  .home-board .map-bottom{top:47px;left:max(12px,env(safe-area-inset-left))}
+  .home-board .map-swipe-note:before{content:'可上下滑动地图'}
+  .content-wrap,.journal-wrap,.bay-scene{padding-top:10px;padding-bottom:22px}
+  .bay-content{width:min(760px,100%);max-width:760px;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;padding:12px 18px;align-items:center}
+  .day-tabs{grid-column:1;grid-row:1;margin:0 0 8px}
+  .bay-content h2{grid-column:1;grid-row:2;font-size:19px;margin-bottom:6px}
+  .bay-intro{grid-column:1;grid-row:3;font-size:12px}
+  .bay-content .bottle{grid-column:2;grid-row:1 / span 3;margin:5px auto 12px;transform:scale(.8)}
+  .bay-action{grid-column:1 / -1;grid-row:4;max-width:600px;justify-self:center;width:100%;margin-top:5px}
+  .bay-action .button{min-height:44px}
+  .bay-action p{margin:8px 0 4px;font-size:11px}
+  .post-layout{display:grid;grid-template-columns:minmax(240px,.85fr) minmax(280px,1.15fr);gap:15px}
+  .page-heading{margin-bottom:12px}
+  .book{height:440px}
+}

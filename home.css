@@ -1,0 +1,46 @@
+/* 首页：沿用原地图色彩；紧凑的旅行游戏界面，不加载外部资源。 */
+body[data-page="home"]{background:#073e66;color:#fff3cf}
+body[data-page="home"] .site-header{min-height:62px;padding:10px max(20px,calc((100% - 1360px)/2));background:#092f4b;border-bottom:2px solid #527f8d;gap:20px}
+body[data-page="home"] .brand{font-size:20px;gap:10px;letter-spacing:2px}
+body[data-page="home"] .brand-mark{width:34px;height:34px;border-radius:0;background:#f1d791;color:#143e54;box-shadow:3px 3px 0 #021d30;font-size:24px}
+body[data-page="home"] .brand small{font-size:10px;letter-spacing:2px;color:#a8c9ce;font-weight:400}
+body[data-page="home"] .site-header nav{display:none}
+body[data-page="home"] .header-note{display:block;margin-left:auto;padding:0;border:0;font-size:11px;color:#b3cbd0;letter-spacing:1px}
+body[data-page="home"] main{min-height:0}
+.home-board{max-width:1360px;margin:0 auto;padding:14px 20px 20px}
+.home-board .map-panel{margin:0;border:2px solid #537e8b;border-radius:0;box-shadow:4px 4px 0 #032940;overflow:hidden}
+.home-board .map-toolbar{padding:9px 14px;background:#123e57;color:#fff2d2;min-height:43px;letter-spacing:0}
+.home-board .map-toolbar h1{margin:0;font:600 16px/1.5 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;letter-spacing:1px}
+.home-board .map-toolbar>span{font-size:11px;color:#c1d4cc;white-space:nowrap}
+.home-board .dot{width:6px;height:6px;border-radius:0;background:#bcbda1;margin-right:7px}
+.home-board .map-canvas{min-width:0;max-height:none;overflow:visible;background:#0074ca}
+.home-board .world-map{margin:0;width:100%;height:auto;display:block}
+.home-board .map-pin{display:flex;align-items:center;gap:5px;padding:5px 7px;background:#10364ded;border:1px solid #ccd7bd;box-shadow:2px 2px 0 #063251;border-radius:0;color:#fff0c9;min-height:30px;font:11px/1.4 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif}
+.home-board .map-pin b{font:bold 10px/1.4 monospace;color:#b5d1d3;padding-right:5px;border-right:1px solid #678d96}
+.home-board .map-pin span{font:inherit;letter-spacing:0;white-space:nowrap}
+.home-board .map-pin:after{border-width:4px;margin-left:-4px;border-top-color:#ccd7bd}
+.home-board .map-pin.lit{background:#f2d58c;color:#173d48;border-color:#fff3cd}
+.home-board .map-pin.lit b{color:#53674e;border-color:#ad9f64}
+.home-board .map-pin:hover{background:#204d60;transform:translate(-50%,-55%)}
+.home-board .map-pin.lit:hover{background:#ffe4a4}
+.home-board .map-bottom{padding:6px 13px;min-height:29px;background:#123e57;color:#b5ccd0;letter-spacing:0;font-size:10px}
+.home-board .map-bottom span:after{content:none}
+.home-board .map-swipe-note{display:none}
+.home-dock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.dock-link{display:flex;align-items:center;gap:12px;min-height:76px;padding:12px 16px;border:2px solid #6b8985;background:#143f53;color:#f6e8bf;box-shadow:3px 3px 0 #042b43;transition:background .15s,transform .15s}
+.dock-link:hover{background:#225369;transform:translateY(-2px);border-color:#d0c69f}
+.dock-link:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #042b43}
+.dock-icon{width:32px;min-width:32px;height:32px;display:block;color:#b9cebb}
+.dock-icon svg{width:100%;height:100%;fill:currentColor;shape-rendering:crispEdges}
+.dock-icon .icon-accent{fill:#d8b66e}
+.dock-icon .icon-eye{fill:#183e53}
+.dock-icon .icon-line{fill:none;stroke:#173e53;stroke-width:2;stroke-linejoin:miter}
+.dock-copy{display:flex;flex-direction:column;gap:2px}
+.dock-copy strong{font-size:15px;font-weight:600;line-height:1.5;white-space:nowrap}
+.dock-copy small{font:10px/1.5 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#a5c1c5}
+.dock-arrow{margin-left:auto;font-size:23px;color:#a7b9a6;line-height:1}
+body[data-page="home"] .site-footer{max-width:1360px;margin:0 auto;padding:0 20px 15px;border:0;color:#9bb7bd;font-size:10px;letter-spacing:0}
+@media(min-width:1100px){.home-board{max-width:min(1360px,calc((100svh - 245px)*1.7778 + 40px));min-width:960px}}
+@media(max-width:800px){body[data-page="home"] .site-header{flex-wrap:nowrap;padding:10px 16px;min-height:58px}.home-board{padding:10px 12px 16px}.home-dock{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.dock-link{min-height:70px;padding:10px 12px;gap:10px}.dock-copy strong{font-size:14px}.dock-icon{width:28px;min-width:28px;height:28px}.home-board .map-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-color:#7fa6b1 #123e57;scrollbar-width:thin}.home-board .map-canvas{min-width:760px}.home-board .map-swipe-note{display:block}.home-board .map-bottom span:last-child{display:block}.home-board .map-pin{padding:5px 6px;font-size:10px;gap:4px}.home-board .map-toolbar{padding:8px 11px}.home-board .map-toolbar h1{font-size:14px}.home-board .map-toolbar>span{font-size:10px}body[data-page="home"] .site-footer{padding:0 14px 12px}}
+@media(max-width:380px){body[data-page="home"] .header-note{font-size:10px;letter-spacing:0}.dock-link{padding:9px 8px;gap:7px}.dock-copy strong{font-size:13px}.dock-arrow{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.dock-link{transition:none}}

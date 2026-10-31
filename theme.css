@@ -1,0 +1,123 @@
+/* 全站沿用地图的海蓝、冰蓝、砂金色和方形边框。 */
+:root{--paper:#0b4269;--ink:#f7ebc8;--muted:#b0cbd5;--line:#638da0;--sea:#bbdce3;--serif:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}
+body{background:#074c80;color:var(--ink);font-size:14px}
+main{min-height:100svh}
+h1,h2,h3{font-family:var(--serif);letter-spacing:0}
+.content-wrap{max-width:1240px;margin:0 auto;padding:16px 20px 30px}
+.page-heading{display:flex;align-items:center;gap:16px;margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid #6292ab}
+.page-heading h1,.bay-scene .page-heading h1{font-size:23px;line-height:1.5;margin:0;font-weight:600}
+.back-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:5px 12px;margin:0;color:#ecf0d3;border:1px solid #93afad;background:#103c57;font-size:12px;white-space:nowrap;box-shadow:2px 2px 0 #032c49}
+.back-link:hover{background:#22546c}
+.lead{color:#b0cbd5}
+.button{min-height:40px;padding:8px 17px;border:1px solid #8ca5a5;border-radius:0;background:#1a4b67;color:#edf0d3;font-size:12px;box-shadow:2px 2px 0 #082e48}
+.button.primary{background:#dfbd73;border-color:#f9df9d;color:#133e54}
+.button:not(:disabled):hover{background:#2b617b;color:#fff4d2}
+.button.primary:hover{background:#f1ce83;color:#133e54}
+.button:disabled{background:#23516b;color:#aac3ce;border-color:#658696;opacity:1;box-shadow:none}
+.eyebrow{letter-spacing:1px;font-size:11px;color:#b4d5df;margin-bottom:10px}
+.home-board{padding-top:12px}
+@media(min-width:1100px){.home-board{max-width:min(1360px,calc((100svh - 155px)*1.7778 + 40px))}}
+/* 展示原始完整介绍图，不裁切、不使用缩略图文件。 */
+.geese-wrap{max-width:1440px;padding-top:14px}
+.geese-wrap .page-heading{margin-bottom:5px}
+.gallery-hint{margin:0 0 10px;text-align:right;color:#bad3df;font-size:11px}
+.geese-scroll{overflow-x:auto;padding-bottom:5px;scrollbar-width:thin;scrollbar-color:#94b8cf #103e60}
+.geese-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;min-width:840px}
+.goose-card{display:block;position:relative;width:100%;min-height:0;padding:0;border:1px solid #8ab5d2;background:#fff;box-shadow:2px 2px 0 #032d4d;text-align:center;transition:border-color .15s,transform .15s}
+.goose-card.goose-leader{grid-column:3;grid-row:1;align-self:center;justify-self:center}
+.goose-person{display:flex;align-items:center;justify-content:center;min-height:40px;padding:7px 10px;background:#123f5a;color:#f7ebc8;border-bottom:1px solid #8ab5d2;font-size:15px;font-weight:600;letter-spacing:2px;line-height:1.6}
+.goose-card:nth-child(2){grid-column:1;grid-row:2}
+.goose-card:hover{border-color:#ffe3a3;transform:translateY(-2px)}
+.goose-card img{display:block;margin:0;width:100%;height:auto;max-width:100%;object-fit:contain;image-rendering:auto}
+.goose-card:after{content:'＋';position:absolute;bottom:7px;right:7px;width:23px;height:23px;display:grid;place-items:center;background:#103f60d9;border:1px solid #b2ccde;color:#fff6d9;font-size:16px}
+/* 海湾保留现有夜海场景，收紧内容，去掉大块宣传式排版。 */
+.bay-scene{min-height:100svh;padding:16px max(20px,calc((100% - 1200px)/2)) 28px;background-position:center 52%}
+.bay-scene .page-heading{margin-bottom:12px}
+.bay-scene .back-link{color:#edf0d3}
+.bay-content{width:410px;max-width:100%;padding:18px 20px 22px;margin:0 auto;border:1px solid #568499;background:#072e48c9;border-radius:0;box-shadow:3px 3px 0 #001e35}
+.day-tabs{gap:8px;margin-bottom:18px}
+.day-tabs button{padding:7px 20px;font-size:12px;letter-spacing:0;border-radius:0}
+.day-tabs .active{background:#dfbd73;color:#113e56;border-color:#ffe0a0}
+.bay-content h2{font-size:22px;margin-bottom:8px}
+.bay-intro{font-size:13px;margin-bottom:0}
+.bottle{margin:25px auto 22px}
+.bay-action p{margin:12px auto 6px;font-size:12px}
+.bay-action small{font-size:10px}
+/* 邮局：同一套海岛面板，信纸留给明信片本身。 */
+.post-layout{grid-template-columns:320px minmax(0,1fr);gap:18px;max-width:1000px;margin:auto}
+.post-letter{padding:20px;border:1px solid #6e9aab;background:#123f5a;box-shadow:3px 3px 0 #052e49}
+.postmark{width:58px;height:58px;margin:0 0 12px auto;border:2px dashed #a4bcc1;border-radius:0;transform:none;padding-top:10px;color:#d9c894;font-size:10px}
+.post-letter h2{font-size:24px;line-height:1.4;margin-bottom:12px}
+.post-letter>p:not(.eyebrow),.rules{font-size:13px;line-height:1.8;color:#c4d7df}
+.rules{margin:15px 0 12px;padding:12px 0;border-color:#7496a4}
+.post-letter small{margin-top:12px;color:#a6c2cf;line-height:1.7}
+.draw-area{padding-top:0}
+.draw-area>.eyebrow{margin:0 0 10px;font-size:13px;color:#e8ecd6}
+.empty-postcard{margin:0 0 16px;padding:65px 22px 22px;min-height:280px;transform:none;background:#f4eddb;color:#234e60;border:2px solid #b4c9c4;box-shadow:3px 3px 0 #032e49}
+.empty-postcard h2{font-size:21px;margin:8px 0}
+.empty-postcard p{color:#6b7c78;font-size:12px}
+.stamp-square{border-radius:0;color:#587f85;border-color:#7e9a96}
+.envelope-icon{color:#7d9896;font-size:45px}
+.card-dashes{margin:20px auto 0}
+.draw-note{margin:10px 0 0;color:#b0cbd5;font-size:11px}
+.card-face{background:#f4eddb;color:#244b59;border:2px solid #b4c9c4;box-shadow:3px 3px 0 #032e49}
+.card-label{font-size:21px;letter-spacing:2px}
+.card-message{font-size:16px;line-height:1.9}
+.card-author{color:#5e786f}
+.card-note{font-size:10px;line-height:1.6;color:#687d76;border-top:1px dashed #bdc8b5;padding-top:9px;display:block;letter-spacing:0}
+.postcard-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.postcard-actions .button{font-size:12px;min-height:44px;padding:7px 15px}
+.postcard{animation:card-arrive .35s ease-out}
+.enlarged-message{padding:18px 20px;color:#f3e9cc;border-top:1px solid #91b4c4;line-height:1.9}
+.enlarged-message>p:first-child{white-space:pre-wrap;font-size:16px;margin-bottom:14px}
+.enlarged-message .reader-author{font-size:12px;color:#c6dade;margin:0 0 5px}
+.enlarged-message small{font-size:11px;color:#b3cbd0}
+@keyframes card-arrive{from{opacity:0;translate:0 9px}to{opacity:1;translate:0 0}}
+.postcard{margin:0 0 8px;height:340px}
+.ending{font-size:12px;line-height:1.7;margin:8px auto 12px;color:#c1d3da}
+.text-button{color:#d8e4de}
+/* 图鉴：海蓝书套、砂金纸张，保留翻页。 */
+.journal-wrap{min-height:100svh;padding:16px max(20px,calc((100% - 1200px)/2)) 25px;background:transparent}
+.journal-stage{padding:5px 15px 22px}
+.book{width:360px;height:460px;border-radius:0;box-shadow:5px 3px 0 #e5d8b8,8px 5px 0 #87a8b3,12px 14px 0 #032f504d}
+.book-binding{width:12px;background:#082e4d;border-color:#80abc1}
+.book-page{padding:22px 27px 40px;border-radius:0;color:#284d5c;background:linear-gradient(90deg,#c4c6b7,#f6efda 7%,#f6efda 96%,#ded4b7)}
+.book-cover{background:#103f60;border:2px solid #94b4bd;color:#f0d99c;padding-top:25px}
+.book-edition{font-size:11px;letter-spacing:2px}
+.cover-symbol{font-size:47px;margin:28px 0 18px;color:#b4cfd7}
+.book-cover h2{font-size:50px;line-height:1.3;letter-spacing:12px;margin:12px 0 20px;padding-left:12px}
+.book-cover>p{font-size:12px;letter-spacing:1px;margin-bottom:12px}
+.cover-rule{margin:20px auto;background:#86a2a9}
+.book-cover{overflow:hidden;background:#0477c8;padding:0;isolation:isolate}
+.journal-map-cover{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.journal-cover-title{position:absolute;top:auto;bottom:16px;left:20px;right:auto;padding:7px 10px;background:#063752d9;border:1px solid #bad1c0;text-align:left;box-shadow:2px 2px 0 #032b4f66}
+.journal-cover-title .book-edition{font-size:11px;letter-spacing:1px;color:#f4e6b6}
+.book-cover .journal-cover-title h2{font-size:26px;line-height:1.2;letter-spacing:5px;margin:5px 0 0;padding:0;color:#fff0c5}
+.journal-cover-title h2 br{display:none}
+.book-cover .book-foot{left:auto;right:10px;bottom:10px;padding:4px 7px;background:#063752df;color:#fff0c5;opacity:1;font-size:10px}
+.book-foot{bottom:17px;font-size:10px}
+.chapter-top{font-size:9px;letter-spacing:0;color:#627a76;padding-bottom:10px}
+.chapter-art,.outcome-cover{height:140px;margin:16px 0;background:#dce5d9}
+.chapter-art span{font-size:54px}
+.book-page:not(.book-cover) h2{font-size:21px;line-height:1.5;margin:10px 0}
+.book-page:not(.book-cover)>p{font-size:12px;color:#627a76;margin-bottom:14px}
+.book-page .button:disabled{background:#dce1d0;color:#657e78;border-color:#a5b6a7}
+.book-controls{gap:14px;margin:0 0 14px}
+.book-controls>span{color:#bad1dc;font-size:11px}
+.chapter-list{gap:6px;max-width:1000px}
+.chapter-list button{padding:6px 10px;border:1px solid #7496a4;background:#123f5a;color:#c6d7dd;font-size:11px}
+.chapter-list [aria-pressed=true]{background:#dfbd73;color:#163f53;border-color:#f5dca4}
+/* 图片弹窗保持高清；原始尺寸模式可横向滚动。 */
+dialog{background:#0c3b59;border:2px solid #91b4c4;border-radius:0;color:#f0e8ce;box-shadow:5px 5px 0 #032a44;width:min(1100px,96vw)}
+.dialog-head{padding:9px 12px;background:#103d58;border-bottom:1px solid #7599a6}
+.dialog-head h2{font-size:17px}
+.icon-button{background:#1c506b;border:1px solid #92b0b7;color:#f7eac5;width:34px;height:34px}
+.reader-tools{position:sticky;top:53px;padding:6px 10px;background:#103d58;z-index:1;border-bottom:1px solid #638896}
+.reader-tools .button{padding:4px 12px;min-height:30px;font-size:11px}
+.image-view{overflow:auto;max-height:calc(90dvh - 105px);background:#fff;overscroll-behavior:contain}
+.image-view .reader-image{width:100%;max-width:100%;height:auto;image-rendering:auto}
+.image-view.original-size .reader-image{width:auto;max-width:none}
+.island-note,.dialog-copy{padding:0 16px;font-size:13px;line-height:1.8;margin-top:12px}
+#reader-body>.button{margin:10px 16px 18px}
+@media(max-width:800px){.content-wrap{padding:12px 12px 24px}.page-heading{gap:12px;margin-bottom:12px;padding-bottom:10px}.page-heading h1,.bay-scene .page-heading h1{font-size:21px}.post-layout{grid-template-columns:1fr;gap:14px}.post-letter{padding:16px}.postmark{float:right;margin:0 0 10px 12px}.post-letter h2{font-size:22px}.post-letter>p:not(.eyebrow){margin-bottom:10px}.rules{margin:10px 0;padding:10px 0}.draw-area{padding:0}.bay-scene,.journal-wrap{padding:12px 12px 24px}.bay-content{padding:15px 14px 20px}.bay-content h2{font-size:21px}.book-controls{gap:8px}.geese-grid{gap:8px;min-width:840px}.gallery-hint:after{content:' · 可左右滑动';}.book{height:460px}.book-page{padding:22px 26px 40px}.book-cover h2{font-size:50px}.chapter-art,.outcome-cover{height:140px}.book-controls .button{padding:8px 10px}.book-page:not(.book-cover) h2{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.goose-card{transition:none}}
