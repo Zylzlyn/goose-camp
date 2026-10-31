@@ -23,7 +23,7 @@
     if(reader.open && state.island !== null){
       const island=C.islands[state.island],lit=island.day<=day;
       const art=document.querySelector('[data-island-art]'),status=document.querySelector('[data-island-status]');
-      if(art){art.src=`assets/${island.day}-${lit?2:1}.png`;art.alt=`${island.name}${lit?'点亮后':'未点亮'}`;}
+      if(art){art.src=`assets/optimized/${island.day}-${lit?2:1}.webp`;art.alt=`${island.name}${lit?'点亮后':'未点亮'}`;}
       if(status)status.textContent=lit?'这座岛已经点亮。':'这座岛尚未点亮，旅程将随活动进度展开。';
     }
     document.querySelector('#announcement').textContent=`已点亮 ${day} 座岛屿，共7座。`;
@@ -96,7 +96,7 @@
       const idx=Number(b.dataset.island), island=C.islands[idx], lit=island.day<=day;
       const link=island.day<=2?'bay':island.day===5?'post':island.day===7?'journal':null;
       if(island.day<=2)state.theme=island.day-1;
-      showReader(`D${island.day} · ${island.name}`,`<img class="reader-image" data-island-art src="assets/${island.day}-${lit?2:1}.png" alt="${e(island.name)}${lit?'点亮后':'未点亮'}"><h3 class="island-note">${e(island.tagline)}</h3><p class="island-note">${e(island.description)}</p><p class="island-note" data-island-status>${lit?'这座岛已经点亮。':'这座岛尚未点亮，旅程将随活动进度展开。'}</p>${link?`<a class="button primary" href="#${link}" data-dialog-link>进入${island.day<=2?'漂流瓶海湾':island.day===5?'漂流邮局':'旅行图鉴'} →</a>`:'<p class="island-note">更多内容见地图下方入口。</p>'}`);
+      showReader(`D${island.day} · ${island.name}`,`<img class="reader-image" data-island-art src="assets/optimized/${island.day}-${lit?2:1}.webp" alt="${e(island.name)}${lit?'点亮后':'未点亮'}"><h3 class="island-note">${e(island.tagline)}</h3><p class="island-note">${e(island.description)}</p><p class="island-note" data-island-status>${lit?'这座岛已经点亮。':'这座岛尚未点亮，旅程将随活动进度展开。'}</p>${link?`<a class="button primary" href="#${link}" data-dialog-link>进入${island.day<=2?'漂流瓶海湾':island.day===5?'漂流邮局':'旅行图鉴'} →</a>`:'<p class="island-note">更多内容见地图下方入口。</p>'}`);
       state.island=idx;
     }
     if(b.hasAttribute('data-goose')){const g=C.geese[Number(b.dataset.goose)];imageReader(`${g.person ? g.person+' · ' : ''}${g.name}`,g.image);}
@@ -121,7 +121,7 @@
     }
     if(b.hasAttribute('data-enlarge')&&state.postcard){
       const p=state.postcard;
-      showReader('明信片 · '+(p.author || '一位旅伴'),'<div class="reader-tools"><button class="button" data-reader-zoom aria-pressed="false">原始尺寸</button></div><div class="image-view"><img class="reader-image" src="'+e(U.safeFile(p.image))+'" alt="海边明信片作品"></div><section class="enlarged-message" aria-label="明信片留言"><p>'+e(p.message)+'</p><p class="reader-author">'+e(p.author || '一位旅伴')+'</p>'+(p.note?'<small>'+e(p.note)+'</small>':'')+'</section>');
+      showReader('明信片 · '+(p.author || '一位旅伴'),'<div class="reader-tools"><button class="button" data-reader-zoom aria-pressed="false">原始尺寸</button></div><div class="image-view"><img class="reader-image" src="'+e(U.previewFile(p.image))+'" alt="海边明信片作品"></div><section class="enlarged-message" aria-label="明信片留言"><p>'+e(p.message)+'</p><p class="reader-author">'+e(p.author || '一位旅伴')+'</p>'+(p.note?'<small>'+e(p.note)+'</small>':'')+'</section>');
     }
     if(b.hasAttribute('data-page'))turnPage(state.page+Number(b.dataset.page));
     if(b.hasAttribute('data-chapter'))turnPage(Number(b.dataset.chapter));
