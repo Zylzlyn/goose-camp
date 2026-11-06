@@ -82,6 +82,54 @@ window.CAMP_CONTENT = {
     {
       "image": "assets/postcards/camp-12.webp",
       "message": "古楼旁，两株柏树守着一方晴空。"
+    },
+    {
+      "image": "assets/postcards/camp-13.webp",
+      "message": "和达菲 say hi～"
+    },
+    {
+      "image": "assets/postcards/camp-14.webp",
+      "message": "送你呼伦贝尔的秋"
+    },
+    {
+      "image": "assets/postcards/camp-15.webp",
+      "message": "万圣节遇到的！特别有意思啊"
+    },
+    {
+      "image": "assets/postcards/camp-16.webp",
+      "message": "祝大家在鹅创营收获满满！"
+    },
+    {
+      "image": "assets/postcards/camp-17.webp",
+      "message": "鹅要过生日啦～"
+    },
+    {
+      "image": "assets/postcards/camp-18.webp",
+      "message": "给你看香港的街景\n是不是很有港风电影的感觉嘞～"
+    },
+    {
+      "image": "assets/postcards/camp-19.webp",
+      "message": "祝你token管够！"
+    },
+    {
+      "image": "assets/postcards/camp-20.webp",
+      "message": "咪 祝人开心"
+    },
+    {
+      "image": "assets/postcards/camp-21.webp",
+      "message": "啦啦啦黑猫警长"
+    },
+    {
+      "image": "assets/postcards/camp-22.webp",
+      "message": "一起登糕！"
+    },
+    {
+      "image": "assets/postcards/camp-23.webp",
+      "message": "这只大馋猫，我给它买了份炸酥肉，它只吃肉不吃皮，后面才知道是烧烤店老板的猫，过的太滋润了!"
+    },
+    {
+      "image": "assets/postcards/camp-24.webp",
+      "message": "企鹅企鹅🐧"
     }
   ],
   outcomes: [
