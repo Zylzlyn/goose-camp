@@ -130,6 +130,18 @@ window.CAMP_CONTENT = {
     {
       "image": "assets/postcards/camp-24.webp",
       "message": "企鹅企鹅🐧"
+    },
+    {
+      "image": "assets/postcards/camp-25.webp",
+      "message": "欢迎欣赏北京的秋天～"
+    },
+    {
+      "image": "assets/postcards/camp-26.webp",
+      "message": "无聊的话来根鸭舌吧！"
+    },
+    {
+      "image": "assets/postcards/camp-27.webp",
+      "message": "逛街碰到一只巨可爱的大金毛～毛超好rua"
     }
   ],
   outcomes: [
