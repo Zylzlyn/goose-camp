@@ -40,11 +40,48 @@ window.CAMP_CONTENT = {
   // 仅添加已审核且获得公开许可的作品：{ image: 'assets/作品.jpg', message: '留言', author: '公开署名' }
   postcards: [
     {
-      image: 'assets/postcards/bus-stop-sample.png',
-      message: '公交还没来，先看了十分钟的海。\n这张长椅分你一半。',
-      author: '鹅小创（示例署名）',
-      note: 'AI生成的体验明信片，非真实群友投稿。',
-      demo: true
+      "image": "assets/postcards/camp-02.webp",
+      "message": "冬天又要来了\n分享一个去年在阿勒泰的日照金山给你\n把好运传递给你"
+    },
+    {
+      "image": "assets/postcards/camp-03.webp",
+      "message": "送你济州岛橘子味的日落嘿嘿～"
+    },
+    {
+      "image": "assets/postcards/camp-04.webp",
+      "message": "它叫杰森（妈生微笑唇版\n没有烦恼的小萨摩耶\n笑一笑吧\n今天的你也不要有烦恼"
+    },
+    {
+      "image": "assets/postcards/camp-05.webp",
+      "message": "嗨 ee你好\n我素小满 很高兴认识你\n要不要请我吃猫条😋"
+    },
+    {
+      "image": "assets/postcards/camp-06.webp",
+      "message": "照片右侧为腾讯滨海大厦，祝大家都能收获鹅厂 offer。"
+    },
+    {
+      "image": "assets/postcards/camp-07.webp",
+      "message": "多去看看路边的小猫吧！说不定它会给你惊喜！"
+    },
+    {
+      "image": "assets/postcards/camp-08.webp",
+      "message": "请大家看玉龙雪山上的彩云"
+    },
+    {
+      "image": "assets/postcards/camp-09.webp",
+      "message": "看到日照金山，会幸运一整年！祝大家接下来顺顺利利"
+    },
+    {
+      "image": "assets/postcards/camp-10.webp",
+      "message": "之前去腾讯参观啦！大家鹅厂见"
+    },
+    {
+      "image": "assets/postcards/camp-11.webp",
+      "message": "在城堡下面看日落——最好的解压方式！\n压力太大就回“家”玩一天"
+    },
+    {
+      "image": "assets/postcards/camp-12.webp",
+      "message": "古楼旁，两株柏树守着一方晴空。"
     }
   ],
   outcomes: [
