@@ -4,7 +4,9 @@
     litDays(lighting, now = Date.now()) {
       const first = Date.parse(lighting?.firstLightAt);
       if (!Number.isFinite(first) || !Number.isFinite(now)) return 0;
-      return Math.max(0, Math.min(7, Math.floor((now - first) / 86400000) + 1));
+      const day = Math.floor((now - first) / 86400000) + 1;
+      // D6 and D7 light together at the D6 threshold.
+      return day >= 6 ? 7 : Math.max(0, day);
     },
     escape(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); },
     safeFile(value) { return typeof value === 'string' && /^assets\/[\w\u3400-\u9fff ./()\-]+\.(png|jpe?g|webp|gif|pdf)$/i.test(value) && !value.split('/').includes('..') ? value : ''; },
